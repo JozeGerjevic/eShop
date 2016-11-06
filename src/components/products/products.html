@@ -1,0 +1,22 @@
+<div class="form-group">
+    <label>Search string:</label>
+    <div class="input-group">
+        <input ng-model="search" type="text" class="form-control" placeholder="Enter search string">
+    </div>
+</div>
+<div class="row text-center">
+
+    <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="product in products">
+        <div class="thumbnail">
+            <img src="{{ product.image }}" alt="">
+            <div class="caption">
+                <h3>{{ product.name }}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>
+                    <a href="#" class="btn btn-primary">Buy Now!</a> <a ui-sref="detail({id: product.id})" class="btn btn-default">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
