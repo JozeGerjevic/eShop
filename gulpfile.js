@@ -9,7 +9,7 @@ var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
-// Task for moving index.html 
+// Task for moving index.html
 // and html templates to the dist folder
 gulp.task('move', function(){
 
@@ -77,7 +77,7 @@ gulp.task('serve', function(){
 // Task for moving library files to dist/lib/ folder
 gulp.task('libs', function () {
 
-	gulp.src(['./bower_components/angular/angular.js','./bower_components/angular/angular.min.js','./bower_components/angular-ui-router/release/angular-ui-router.js','./bower_components/angular-resource/angular-resource.js'])
+	gulp.src(['./bower_components/bootstrap/dist/js/*.js','./bower_components/jquery/dist/*.js','./bower_components/angular/angular.js','./bower_components/angular/angular.min.js','./bower_components/angular-ui-router/release/angular-ui-router.js','./bower_components/angular-resource/angular-resource.js'])
 		.pipe(gulp.dest('./dist/lib/js'))
 		.pipe(notify("Copied AngularJS files!"));
 
@@ -99,23 +99,3 @@ gulp.task('watch', ['serve'], function(){
 	gulp.watch(['./src/**/*.js'], ['scripts']);
 	gulp.watch(['./src/**/*.html'], ['move']);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
