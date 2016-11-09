@@ -1,5 +1,5 @@
 //  Add ui-router as a dependency
-angular.module('app', ['ui.router', 'ngResource']);
+angular.module('app', ['ui.router', 'ngResource','ui.bootstrap']);
 
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/category');
@@ -70,6 +70,28 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
         }
     });
 });
+angular.module('app').controller('SliderController', function($scope, ProductFactory) {
+
+    $scope.interval = 3000;
+    $scope.myInterval = 5000;
+    $scope.noWrapSlides = false;
+    $scope.active = 0;
+    $scope.slides = ProductFactory.query({
+        query: "Al",
+        onlyOnSale : true,
+        onlyStocked : true
+    });
+
+});
+
+angular.module('app').directive('appCarousel', function(){
+	return {
+		restrict: 'E',
+		controller: 'SliderController',
+		templateUrl: 'templates/carousel-template.html'
+	};
+});
+
 angular.module('app').factory('CategoryFactory', function ($resource) {
 
     return $resource('http://smartninja.betoo.si/api/eshop/categories');

@@ -1,0 +1,13 @@
+<div class="well">
+    <div style="height: 305px">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                    <p>{{slide.name}}</p>
+                </div>
+            </div>
+        </div>
+        <!--    -->
+    </div>
+</div>
