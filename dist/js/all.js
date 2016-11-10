@@ -1,5 +1,5 @@
 //  Add ui-router as a dependency
-angular.module('app', ['ui.router', 'ngResource','ui.bootstrap']);
+angular.module('app', ['ui.router', 'ngResource','ui.bootstrap','angular-loading-bar']);
 
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/category');

@@ -77,11 +77,11 @@ gulp.task('serve', function(){
 // Task for moving library files to dist/lib/ folder
 gulp.task('libs', function () {
 
-	gulp.src(['./bower_components/angular-bootstrap/*.js','./bower_components/bootstrap/dist/js/*.js','./bower_components/jquery/dist/*.js','./bower_components/angular/angular.js','./bower_components/angular/angular.min.js','./bower_components/angular-ui-router/release/angular-ui-router.js','./bower_components/angular-resource/angular-resource.js'])
+	gulp.src(['./bower_components/angular-loading-bar/build/*.js','./bower_components/angular-bootstrap/*.js','./bower_components/bootstrap/dist/js/*.js','./bower_components/jquery/dist/*.js','./bower_components/angular/angular.js','./bower_components/angular/angular.min.js','./bower_components/angular-ui-router/release/angular-ui-router.js','./bower_components/angular-resource/angular-resource.js'])
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(notify("Copied AngularJS files!"));
 
-	gulp.src(['./bower_components/angular-bootstrap/ui-bootstrap-csp.css','./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/bootstrap/dist/css/bootstrap-theme.min.css'])
+	gulp.src(['./bower_components/angular-loading-bar/build/*.css','./bower_components/angular-bootstrap/ui-bootstrap-csp.css','./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/bootstrap/dist/css/bootstrap-theme.min.css'])
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(notify("Copied Bootstrap CSS files!"));
 
